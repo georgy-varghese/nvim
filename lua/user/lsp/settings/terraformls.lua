@@ -7,6 +7,10 @@ terraformls.setup({})
 
 -- require'lspconfig'.terraformls.setup{}
 
+terraformls.setup({
+  terraform = { "fmt" }
+})
+
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
   pattern = {"*.tf", "*.tfvars"},
   callback = vim.lsp.buf.format(),
